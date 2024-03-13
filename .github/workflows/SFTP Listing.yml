@@ -18,4 +18,4 @@ jobs:
 
       - name: List root folder on SFTP server
         run: |
-          lftp -u ${{ secrets.SFTP_USERNAME }},${{ secrets.SFTP_PASSWORD }} sftp://${{ secrets.SFTP_HOST }} -e "ls; exit"
+          lftp -u ${{ secrets.SFTP_USERNAME }},${{ secrets.SFTP_PASSWORD }} -p 10022 sftp://${{ secrets.SFTP_HOST }} -e "ls; exit"
